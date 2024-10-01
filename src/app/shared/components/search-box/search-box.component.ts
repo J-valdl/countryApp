@@ -18,15 +18,15 @@ export class SearchBoxComponent implements OnInit, OnDestroy {
   @Input()
   public initialValue: string = ''
 
-  @Output()
-  public onValue = new EventEmitter<string>();
+  // @Output()
+  // public onValue = new EventEmitter<string>();
 
   @Output()
   public onDebounce = new EventEmitter<string>();
 
-  emitValue(value: string): void {
-    this.onValue.emit(value)
-  }
+  // emitValue(value: string): void {
+  //   this.onValue.emit(value)
+  // }
 
   onKeyPress(searchText: string) {
     this.debouncer.next(searchText)
