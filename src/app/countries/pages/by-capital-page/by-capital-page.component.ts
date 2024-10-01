@@ -18,10 +18,15 @@ export class ByCapitalPageComponent {
 
     this.isLoading = true
 
-    this.countriesServices.searchCapital(term).subscribe(countries => {
+    this.countriesServices.searchCapital(term).subscribe(async countries => {
+      await this.delay(2000);
       this.countries = countries
       this.isLoading = false
     })
+  }
+
+  delay(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
   }
 
 }
